@@ -1,25 +1,11 @@
 # frozen_string_literal: true
 
-require "csv"
+require_relative "formats/array"
+require_relative "formats/csv"
 
 module TableView
   class Base
-    def as_array
-      array = []
-      array << headers
-      each_row do |row|
-        array << row
-      end
-      array
-    end
-
-    def write_csv(io)
-      csv = CSV.new(io)
-      csv << headers
-      each_row do |row|
-        csv << row
-      end
-      csv.close
-    end
+    include TableView::Formats::Array
+    include TableView::Formats::CSV
   end
 end

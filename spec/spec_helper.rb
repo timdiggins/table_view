@@ -15,4 +15,8 @@ RSpec.configure do |config|
   end
 
   config.fail_fast = 1 unless ENV["CI"] || ENV["NO_FAIL_FAST"] || ARGV.include?("-no-fail-fast")
+
+  Dir[File.expand_path("../support/**/*.rb", __FILE__ )].each { |f| require f }
 end
+
+FIXTURES_PATH = File.expand_path("../fixtures", __FILE__)
