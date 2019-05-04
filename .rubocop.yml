@@ -1,0 +1,68 @@
+---
+AllCops:
+  Exclude:
+    - bin/**/*
+    - node_modules/**/*
+    - vendor/**/*
+    - ".git/**/*"
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/ClassStructure:
+  Enabled: true
+
+Layout/EndAlignment:
+  AutoCorrect: true
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/EmptyWhen:
+  Enabled: false
+
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+  ExcludedMethods:
+    - context
+    - describe
+    - namespace
+    - shared_examples_for
+    - shared_examples
+    - pending
+    - shared_context
+    - it
+    - specify
+  Exclude:
+    - spec/factories/**/*
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/ClassAndModuleChildren:
+  AutoCorrect: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/GlobalVars:
+  AllowedVariables:
+    - "$redis"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
+
+Style/UnneededPercentQ:
+  Exclude:
+    - '*.gemspec'
